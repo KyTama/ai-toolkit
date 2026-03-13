@@ -225,3 +225,18 @@ ai-toolkit/
 ├── _gemini_specific.md    # gemini/antigravity overrides (tracked)
 └── _claude_specific.md    # claude code overrides (tracked)
 ```
+
+---
+
+## Credits & Sources
+
+This toolkit is built on top of the following open-source projects:
+
+| Project | Author | Purpose |
+|---|---|---|
+| [antigravity-kit](https://github.com/vudovn/antigravity-kit) | vudovn | Agents, workflows, and base skills |
+| [antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) | sickn33 | Extended skill library (200+ skills) |
+
+Skills from `antigravity-awesome-skills` are cherry-picked and merged into
+`.agent/skills/` — excluding skills already provided by `antigravity-kit` to
+avoid duplication. Run `ai-update` to pull the latest from both sources.
