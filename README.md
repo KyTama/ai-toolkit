@@ -9,6 +9,16 @@ antigravity-kit agents/workflows, and curated skills.
 ```bash
 git clone https://github.com/KyTama/ai-toolkit.git
 cd ai-toolkit
+```
+
+Copy and fill in your personal context:
+```bash
+cp _personal.md.example _personal.md
+vi _personal.md
+```
+
+Then bootstrap:
+```bash
 ./scripts/bootstrap.sh
 ```
 
@@ -67,7 +77,7 @@ use bun-development for this task
 use docker-expert to review this Dockerfile
 ```
 
-### After editing `_shared.md`, `_gemini_specific.md`, or `_claude_specific.md`
+### After editing `_shared.md`, `_personal.md`, `_gemini_specific.md`, or `_claude_specific.md`
 ```bash
 ai-rebuild
 ```
@@ -108,15 +118,17 @@ ai-update
 | `.agent/workflows/` | Slash command procedures |
 
 ### Source of truth
-| File | Purpose |
-|---|---|
-| `_shared.md` | Identity, stack, tone, code style, workflow philosophy |
-| `_gemini_specific.md` | Gemini CLI + Antigravity behavior + orchestration rules |
-| `_claude_specific.md` | Claude Code behavior overrides |
+| File | Tracked | Purpose |
+|---|---|---|
+| `_shared.md` | yes | Identity, tone, code style, workflow philosophy |
+| `_personal.md` | no | Stack, active projects (local only) |
+| `_gemini_specific.md` | yes | Gemini CLI + Antigravity behavior + orchestration rules |
+| `_claude_specific.md` | yes | Claude Code behavior overrides |
 
-> `GEMINI.md` and `CLAUDE.md` (both global and per-project) are assembled by
-> concatenating `_shared.md` + the tool-specific file. Edit the source files,
-> then run `ai-rebuild` — never edit the assembled files directly.
+> `GEMINI.md` and `CLAUDE.md` are assembled by concatenating:
+> `_shared.md` + `_personal.md` + tool-specific file.
+> Edit the source files, then run `ai-rebuild` — never edit the assembled files directly.
+> `_personal.md` is gitignored and never pushed to the repository.
 
 ---
 
@@ -134,7 +146,9 @@ ai-toolkit/
 ├── templates/
 │   ├── GEMINI.project.md  # per-project GEMINI.md template
 │   └── CLAUDE.project.md  # per-project CLAUDE.md template
-├── _shared.md             # source of truth
-├── _gemini_specific.md    # gemini/antigravity overrides
-└── _claude_specific.md    # claude code overrides
+├── _shared.md             # identity, tone, code style (tracked)
+├── _personal.md           # stack, projects (local only, gitignored)
+├── _personal.md.example   # template for _personal.md (tracked)
+├── _gemini_specific.md    # gemini/antigravity overrides (tracked)
+└── _claude_specific.md    # claude code overrides (tracked)
 ```
