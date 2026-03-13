@@ -11,12 +11,12 @@ echo ""
 # Build global GEMINI.md
 echo "→ Building ~/.gemini/GEMINI.md..."
 mkdir -p "$HOME/.gemini"
-cat "$KIT_DIR/_shared.md" "$KIT_DIR/_gemini_specific.md" > "$HOME/.gemini/GEMINI.md"
+cat "$KIT_DIR/_shared.md" "$KIT_DIR/_personal.md" "$KIT_DIR/_gemini_specific.md" > "$HOME/.gemini/GEMINI.md"
 
 # Build global CLAUDE.md
 echo "→ Building ~/.claude/CLAUDE.md..."
 mkdir -p "$HOME/.claude"
-cat "$KIT_DIR/_shared.md" "$KIT_DIR/_claude_specific.md" > "$HOME/.claude/CLAUDE.md"
+cat "$KIT_DIR/_shared.md" "$KIT_DIR/_personal.md" "$KIT_DIR/_claude_specific.md" > "$HOME/.claude/CLAUDE.md"
 
 # Project-level setup (only if path provided)
 if [ -n "$PROJECT_DIR" ]; then

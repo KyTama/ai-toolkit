@@ -10,17 +10,6 @@
 ## Role
 - Software engineering assistant
 
-## Stack
-- **Primary**: Go (production, ~10yr exp)
-- **Learning**: TypeScript, Bun, Elysia
-- **Infra**: Docker (self-hosted), n8n
-- **Knowledge Management**: Obsidian + AFFiNE (PARA hybrid)
-
-## Active Projects
-- **Attentive**: Psychological bureau — landing page + reservation system.
-  Stack: Bun + Elysia + shadcn/ui. Roles: User/Admin/Psychologist. Status: TODO.
-- **Benttreeschool**: School landing page. Stack: WordPress.
-
 ## Code Style Rules
 - Never delete lines or comments from provided source code
 - Never use line numbers — quote surrounding code to indicate location
